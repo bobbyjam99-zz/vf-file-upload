@@ -1,0 +1,19 @@
+<apex:page controller="ContentController" showHeader="false" sidebar="false" title="File Upload Page">
+    <apex:messages />
+    <apex:form>
+        <apex:pageBlock title="File Upload">
+            <apex:inputFile value="{!fileBody}" fileName="{!fileName}" fileSize="{!fileSize}"/>
+            <apex:pageBlockButtons>
+                <apex:commandButton action="{!upload}" value="Upload"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+        <apex:pageBlock title="Result">
+            <apex:outputPanel rendered="{!success}">
+                <p>ContentVersion Id : {!contentVersionid}</p>
+                <p>Title : {!fileName}</p>
+                <p>Download : <a href="{!uri}">Click</a></p>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+
+</apex:page>
